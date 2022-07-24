@@ -1,0 +1,12 @@
+module com.example.heatos {
+    requires javafx.controls;
+    requires javafx.fxml;
+
+
+    opens com.example.heatos to javafx.fxml;
+    exports com.example.heatos;
+    exports com.example.heatos.model;
+    opens com.example.heatos.model to javafx.fxml;
+    exports com.example.heatos.controller;
+    opens com.example.heatos.controller to javafx.fxml;
+}

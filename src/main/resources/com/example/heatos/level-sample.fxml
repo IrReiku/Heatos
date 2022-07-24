@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="container" stylesheets="@mainStyles.css"
+      xmlns="http://javafx.com/javafx/11.0.2">
+    <Group>
+        <AnchorPane prefHeight="600.0" prefWidth="600.0">
+            <GridPane AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="100" styleClass="GridPane" fx:id="gridPane">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                </rowConstraints>
+            </GridPane>
+            <AnchorPane prefHeight="60.0" prefWidth="600.0" AnchorPane.topAnchor="70.0">
+                <Label text="Уровень 1" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" fx:id="levelName"/>
+                <Button prefHeight="60.0" prefWidth="60.0" text="⟲" AnchorPane.rightAnchor="120.0"/>
+                <Button prefHeight="60.0" prefWidth="60.0" text="←" AnchorPane.leftAnchor="120.0"/>
+            </AnchorPane>
+        </AnchorPane>
+    </Group>
+</VBox>

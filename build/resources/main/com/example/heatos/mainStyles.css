@@ -1,0 +1,54 @@
+.button {
+    -fx-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-text-alignment: center;
+}
+
+.button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+}
+
+.label {
+    -fx-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    -fx-text-fill: white;
+    -fx-font-size: 42px;
+    -fx-alignment: center;
+}
+
+.container {
+    -fx-background-color: radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 48.2379% 50.0%, radius 60.0%, #951847 0.0%, #2e0c36 100.0%);
+    -fx-alignment: center;
+    -fx-min-height: 800;
+    -fx-min-width: 800;
+}
+
+.LevelButton {
+    -fx-font-weight: 700;
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-font-size: 54px;
+    -fx-pref-height: 140px;
+    -fx-pref-width: 140px;
+}
+
+.LevelButton:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.20);
+}
+
+.backButton {
+    -fx-font-weight: 700;
+    -fx-font-size: 30px;
+}
+
+#buttonPane {
+    -fx-pref-width: 540;
+    -fx-pref-height: 360;
+}
+
+.GridPane {
+    -fx-alignment: center;
+    -fx-grid-lines-visible: true;
+    -fx-min-height: 400px;
+    -fx-min-width: 400px;
+}
