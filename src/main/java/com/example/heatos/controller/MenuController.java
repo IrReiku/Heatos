@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public abstract class MenuController {
+public class MenuController {
     @FXML
     public FlowPane buttonPane;
 
@@ -29,8 +29,6 @@ public abstract class MenuController {
     @FXML
     public void level1 () throws IOException {
         showLevel();
-
-
     }
 
     public void showLevel() throws IOException {
