@@ -48,7 +48,50 @@
 
 .GridPane {
     -fx-alignment: center;
-    -fx-grid-lines-visible: true;
     -fx-min-height: 400px;
     -fx-min-width: 400px;
+}
+
+.warmBlock {
+    -fx-arc-width: 25;
+    -fx-arc-height: 25;
+    -fx-fill: #f6525e;
+    -fx-stroke-width: 5;
+    -fx-stroke: rgba(46, 12, 54, 0.3);
+}
+
+.coldBlock {
+    -fx-arc-width: 25;
+    -fx-arc-height: 25;
+    -fx-fill: #4fbcd1;
+    -fx-stroke-width: 5;
+    -fx-stroke: rgba(46, 12, 54, 0.3);
+}
+
+.stoneBlock {
+    -fx-arc-width: 25;
+    -fx-arc-height: 25;
+    -fx-fill: #2f2a3f;
+    -fx-stroke-width: 5;
+    -fx-stroke: rgba(46, 12, 54, 0.3);
+}
+
+.multiplyBlock {
+    -fx-arc-width: 25;
+    -fx-arc-height: 25;
+    -fx-fill: #dcd4da;
+    -fx-stroke-width: 5;
+    -fx-stroke: rgba(46, 12, 54, 0.3);
+}
+
+.multiplyBlockLabel {
+    -fx-text-fill: #2e0c36;
+}
+
+.gridLine {
+    -fx-arc-width: 10;
+    -fx-arc-height: 10;
+    -fx-stroke-width: 4;
+    -fx-fill: transparent;
+    -fx-stroke: rgba(46, 12, 54, 0.1);
 }

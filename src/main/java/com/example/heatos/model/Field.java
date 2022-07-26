@@ -1,63 +1,68 @@
 package com.example.heatos.model;
 
+import com.example.heatos.controller.LevelController;
+
 public class Field {
-    int size;
-    int[][] matrix;
-    public Block selected;
+    public int size;
+    Block[][] matrix;
+    TemperatureBlock selectedBlock;
+
 
     public Field (int size) {
         this.size = size;
-        matrix = new int[size][size];
+        matrix = new Block[size][size];
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                matrix[i][j] = 0;
+        for (int x = 0; x < size; x++) {
+            for (int y = 0; y < size; y++) {
+                matrix[y][x] = new TemperatureBlock(0, x, y);
             }
         }
     }
 
-    public Field (int[][] matrix) {
-        this.matrix = matrix;
-        this.size = matrix.length;
+    public void setSelectedBlock(TemperatureBlock block) {
+        this.selectedBlock = block;
     }
 
     public void addBlock(int x, int y, Block block) {
-        matrix[y][x] = block.temperature;
+        matrix[y][x] = block;
     }
 
-    public void move(Block block, String direction) {
-        matrix[block.y][block.x] = 0;
+    public Block getBlock(int x, int y) {
+        return matrix[y][x];
+    }
 
-        switch (direction) {
-            case "up":
-                block.y -= 1;
-                break;
-            case "down":
-                block.y += 1;
-                break;
-            case "left":
-                block.x -= 1;
-                break;
-            case "right":
-                block.x += 1;
-                break;
+    public void move(int x, int y) {
+        Block destinationBlock = matrix[y][x];
+        if (!(destinationBlock instanceof StoneBlock) &&
+            (x == selectedBlock.x && y == selectedBlock.y + 1 ||
+            x == selectedBlock.x + 1 && y == selectedBlock.y ||
+            x == selectedBlock.x && y == selectedBlock.y - 1 ||
+            x == selectedBlock.x - 1 && y == selectedBlock.y )) {
+
+            matrix[selectedBlock.y][selectedBlock.x] = new TemperatureBlock(selectedBlock.x, selectedBlock.y);
+            int newTemperature = 0;
+            if (destinationBlock instanceof TemperatureBlock) {
+                if (((TemperatureBlock) destinationBlock).temperature >= 0 || selectedBlock.temperature > 0) {
+                    if (((TemperatureBlock) destinationBlock).temperature == 0) {
+                    newTemperature = selectedBlock.temperature - 1;
+                    } else {
+                    newTemperature = selectedBlock.temperature + ((TemperatureBlock) destinationBlock).temperature;
+                }
+            }
+            } else if (destinationBlock instanceof MultiplyBlock) {
+                newTemperature = selectedBlock.temperature * ((MultiplyBlock) destinationBlock).index;
+            }
+            matrix[y][x] = new TemperatureBlock(newTemperature, x, y);
         }
-
-        if (matrix[block.y][block.x] == 0) block.temperature -= 1;
-        else block.temperature += matrix[block.y][block.x];
-        matrix[block.y][block.x] = block.temperature;
     }
 
     public boolean winCheck() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (matrix[i][j] != 0) return false;
+                if (matrix[i][j] instanceof TemperatureBlock && ((TemperatureBlock) matrix[i][j]).temperature != 0)
+                    return false;
             }
         }
         return true;
-    }
-
-    public void setSelected(Block block) {
-        selected = block;
     }
 }

@@ -5,26 +5,29 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="container" stylesheets="@mainStyles.css"
-      xmlns="http://javafx.com/javafx/11.0.2">
+      xmlns="http://javafx.com/javafx/11.0.2" fx:controller="com.example.heatos.controller.LevelController">
     <Group>
         <AnchorPane prefHeight="600.0" prefWidth="600.0">
-            <GridPane AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="100" styleClass="GridPane" fx:id="gridPane">
+            <Label fx:id="endGameLabel" text="Вы выиграли!" prefWidth="600" prefHeight="100"
+                   AnchorPane.bottomAnchor="250" visible="false"/>
+            <GridPane fx:id="gridPane" styleClass="GridPane" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="100" >
                 <columnConstraints>
-                    <ColumnConstraints hgrow="ALWAYS"/>
-                    <ColumnConstraints hgrow="ALWAYS"/>
-                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints halignment="CENTER" />
+                    <ColumnConstraints halignment="CENTER" />
+                    <ColumnConstraints halignment="CENTER" />
                 </columnConstraints>
                 <rowConstraints>
-                    <RowConstraints vgrow="ALWAYS"/>
-                    <RowConstraints vgrow="ALWAYS"/>
-                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints valignment="CENTER" />
+                    <RowConstraints valignment="CENTER" />
+                    <RowConstraints valignment="CENTER" />
                 </rowConstraints>
             </GridPane>
             <AnchorPane prefHeight="60.0" prefWidth="600.0" AnchorPane.topAnchor="70.0">
-                <Label text="Уровень 1" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" fx:id="levelName"/>
-                <Button prefHeight="60.0" prefWidth="60.0" text="⟲" AnchorPane.rightAnchor="120.0"/>
-                <Button prefHeight="60.0" prefWidth="60.0" text="←" AnchorPane.leftAnchor="120.0"/>
+                <Label fx:id="levelName" text="Уровень 1" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" />
+                <Button prefHeight="60.0" prefWidth="60.0" text="⟲" AnchorPane.rightAnchor="120.0" />
+                <Button onAction="#showMenu" prefHeight="60.0" prefWidth="60.0" text="←" AnchorPane.leftAnchor="120.0" />
             </AnchorPane>
         </AnchorPane>
+
     </Group>
 </VBox>

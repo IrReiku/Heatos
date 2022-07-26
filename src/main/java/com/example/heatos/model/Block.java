@@ -1,12 +1,9 @@
 package com.example.heatos.model;
 
-public class Block {
-    int temperature;
+public abstract class Block {
     int x;
     int y;
-
-    public Block(int temperature, int x, int y) {
-        this.temperature = temperature;
+    public Block(int x, int y) {
         this.x = x;
         this.y = y;
     }
