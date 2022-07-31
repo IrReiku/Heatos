@@ -7,4 +7,8 @@ public class MultiplyBlock extends Block{
         super(x, y);
         this.index = index;
     }
+    public MultiplyBlock(MultiplyBlock block) {
+        super(block.x, block.y);
+        this.index = block.index;
+    }
 }

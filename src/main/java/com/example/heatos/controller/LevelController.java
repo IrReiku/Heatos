@@ -28,6 +28,7 @@ public class LevelController {
 
     public int lvl;
     public Field field;
+    public Field startField;
     public Label endGameLabel;
     Boolean selectedExists = false;
 
@@ -43,10 +44,13 @@ public class LevelController {
         this.lvl = lvl;
         levelName.setText("Уровень " + lvl);
     }
+
     public void setField(Field field) {
-        this.field = field;
+        this.field = new Field(field);
+        this.startField = new Field(field);
         drawField();
     }
+
     private double resizeGrid() {
         while (gridPane.getRowCount() != field.size) {
             int index = gridPane.getRowCount();
@@ -73,13 +77,16 @@ public class LevelController {
                 Block block = field.getBlock(x, y);
                 Rectangle rectangle = new Rectangle();
                 Label label = new Label();
-                label.setPickOnBounds(true);
-                Rectangle pane = new Rectangle();
-                pane.setFill(Paint.valueOf("transparent"));
-                pane.setWidth(cellSize);
-                pane.setHeight(cellSize);
+                label.getStyleClass().clear();
+                label.getStyleClass().add("blockLabel");
+                label.setFont(new Font(cellSize*0.40));
+                Rectangle clickPane = new Rectangle();
+                clickPane.setFill(Paint.valueOf("transparent"));
+                clickPane.setWidth(cellSize);
+                clickPane.setHeight(cellSize);
 
                 if (block instanceof TemperatureBlock) {
+
                     int blockTemperature = ((TemperatureBlock) block).temperature;
                     label.setText(Integer.toString(blockTemperature));
                     if (blockTemperature > 0) {
@@ -91,27 +98,6 @@ public class LevelController {
                         label.setVisible(false);
                     }
 
-                    pane.setOnMouseClicked(event -> {
-                        int rectX = GridPane.getColumnIndex(rectangle);
-                        int rectY = GridPane.getRowIndex(rectangle);
-                        if (field.getBlock(rectX, rectY) instanceof TemperatureBlock) {
-                            if (!selectedExists && blockTemperature != 0) {
-                                DropShadow shadow = new DropShadow();
-                                shadow.setSpread(0.3);
-                                shadow.setColor(new Color(0.1804, 0.0471, 0.2118, 1.0));
-                                rectangle.setEffect(shadow);
-                                field.setSelectedBlock((TemperatureBlock) field.getBlock(rectX, rectY));
-                                selectedExists = true;
-                            } else {
-                                field.move(rectX, rectY);
-                                if (field.winCheck()){
-                                    endGame();
-                                }
-                                selectedExists = false;
-                                drawField();
-                            }
-                        }
-                    });
                 } else if (block instanceof MultiplyBlock) {
                     label.getStyleClass().add("multiplyBlockLabel");
                     label.setText("×"+ ((MultiplyBlock) block).index);
@@ -119,7 +105,36 @@ public class LevelController {
                 } else if (block instanceof StoneBlock) {
                     rectangle.getStyleClass().add("stoneBlock");
                 }
-                rectangle.setWidth(cellSize-20);
+
+                clickPane.setOnMouseClicked(event -> {
+                    int rectX = GridPane.getColumnIndex(rectangle);
+                    int rectY = GridPane.getRowIndex(rectangle);
+                    if (field.getBlock(rectX, rectY) instanceof TemperatureBlock) {
+                        if (!selectedExists && ((TemperatureBlock) block).temperature != 0) {
+                            DropShadow shadow = new DropShadow();
+                            shadow.setSpread(0.3);
+                            shadow.setColor(new Color(0.1804, 0.0471, 0.2118, 1.0));
+                            rectangle.setEffect(shadow);
+                            field.setSelectedBlock((TemperatureBlock) field.getBlock(rectX, rectY));
+                            selectedExists = true;
+                        } else {
+                            field.move(rectX, rectY);
+                            if (field.winCheck()){
+                                endGame();
+                            }
+                            selectedExists = false;
+                            drawField();
+                        }
+                    } else if (field.getBlock(rectX, rectY) instanceof MultiplyBlock && selectedExists) {
+                        field.move(rectX, rectY);
+                        if (field.winCheck()){
+                            endGame();
+                        }
+                        selectedExists = false;
+                        drawField();
+                    }
+                });
+                rectangle.setWidth(cellSize*0.85);
                 rectangle.setHeight(rectangle.getWidth());
                 Rectangle gridLine = new Rectangle();
                 gridLine.getStyleClass().add("gridLine");
@@ -128,13 +143,22 @@ public class LevelController {
                 gridPane.add(gridLine, x, y);
                 gridPane.add(rectangle, x, y);
                 gridPane.add(label, x, y);
-                gridPane.add(pane, x, y);
+                gridPane.add(clickPane, x, y);
             }
         }
     }
 
     public void endGame() {
         gridPane.setVisible(false);
+        selectedExists = false;
         endGameLabel.setVisible(true);
+    }
+
+    public void restart() {
+        gridPane.setVisible(true);
+        endGameLabel.setVisible(false);
+        field = new Field(startField);
+        selectedExists = false;
+        drawField();
     }
 }

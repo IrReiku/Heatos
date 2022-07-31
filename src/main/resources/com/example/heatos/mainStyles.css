@@ -95,3 +95,9 @@
     -fx-fill: transparent;
     -fx-stroke: rgba(46, 12, 54, 0.1);
 }
+
+.blockLabel {
+    -fx-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+}

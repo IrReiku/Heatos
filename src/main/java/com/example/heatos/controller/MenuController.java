@@ -2,8 +2,9 @@ package com.example.heatos.controller;
 
 import com.example.heatos.Heatos;
 import com.example.heatos.model.Field;
+import com.example.heatos.model.MultiplyBlock;
+import com.example.heatos.model.StoneBlock;
 import com.example.heatos.model.TemperatureBlock;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -55,10 +56,33 @@ public class MenuController {
     public void level2() throws IOException {
         FXMLLoader fxmlLoader = showLevel();
         LevelController controller = fxmlLoader.getController();
-        controller.setLvl(1);
+        controller.setLvl(2);
         Field field = new Field(3);
-        field.addBlock(0, 0, new TemperatureBlock(-3, 0, 0));
-        field.addBlock(0, 1, new TemperatureBlock(3, 0, 1));
+        field.addBlock(0, 0, new TemperatureBlock(3, 0, 0));
+        field.addBlock(0, 1, new StoneBlock(0, 1));
+        field.addBlock(0, 2, new TemperatureBlock(3, 0, 2));
+        field.addBlock(1, 0, new TemperatureBlock(-2, 1, 0));
+        field.addBlock(1, 1, new TemperatureBlock(-5, 1, 1));
+        field.addBlock(1, 2, new TemperatureBlock(-3, 1, 2));
+        field.addBlock(2, 0, new TemperatureBlock(2, 2, 0));
+        field.addBlock(2, 1, new StoneBlock(2, 1));
+        field.addBlock(2, 2, new TemperatureBlock(2, 2, 2));
+        controller.setField(field);
+    }
+
+    public void level3() throws IOException {
+        FXMLLoader fxmlLoader = showLevel();
+        LevelController controller = fxmlLoader.getController();
+        controller.setLvl(3);
+        Field field = new Field(4);
+        field.addBlock(0, 1, new TemperatureBlock(2, 0, 1));
+        field.addBlock(0, 2, new TemperatureBlock(-4,0,2));
+        field.addBlock(0, 3, new TemperatureBlock(1, 0, 3));
+        field.addBlock(1, 1, new MultiplyBlock(2, 1, 1));
+        field.addBlock(1, 3, new TemperatureBlock(-9, 1, 3));
+        field.addBlock(2, 2, new MultiplyBlock(2, 2, 2));
+        field.addBlock(2, 3, new TemperatureBlock(2, 2, 3));
+        field.addBlock(3, 0, new TemperatureBlock(3, 3, 0));
         controller.setField(field);
     }
 }
