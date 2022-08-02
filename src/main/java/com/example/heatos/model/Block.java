@@ -7,9 +7,4 @@ public abstract class Block {
         this.x = x;
         this.y = y;
     }
-
-    public Block(Block block) {
-        this.x = block.x;
-        this.y = block.y;
-    }
 }

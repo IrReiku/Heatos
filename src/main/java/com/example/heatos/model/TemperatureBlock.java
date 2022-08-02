@@ -15,4 +15,5 @@ public class TemperatureBlock extends Block {
         super(block.x, block.y);
         this.temperature = block.temperature;
     }
+
 }

@@ -35,12 +35,12 @@ public class MenuController {
         LevelController controller = fxmlLoader.getController();
         controller.setLvl(1);
         Field field = new Field(5);
-        field.addBlock(0, 0, new TemperatureBlock(3, 0, 0));
-        field.addBlock(0, 4, new TemperatureBlock(3, 0, 4));
-        field.addBlock(4, 0, new TemperatureBlock(3, 4, 0));
-        field.addBlock(4, 4, new TemperatureBlock(3, 4, 4));
-        field.addBlock(1, 2, new TemperatureBlock(-3, 1, 2));
-        field.addBlock(3, 2, new TemperatureBlock(-3, 3, 2));
+        field.addBlock(0, 0, "3");
+        field.addBlock(0, 4, "3");
+        field.addBlock(4, 0,"3");
+        field.addBlock(4, 4, "3");
+        field.addBlock(1, 2, "-3");
+        field.addBlock(3, 2, "-3");
         controller.setField(field);
     }
 
@@ -58,9 +58,9 @@ public class MenuController {
         LevelController controller = fxmlLoader.getController();
         controller.setLvl(2);
         Field field = new Field(3);
-        field.addBlock(0, 0, new TemperatureBlock(3, 0, 0));
-        field.addBlock(0, 1, new StoneBlock(0, 1));
-        field.addBlock(0, 2, new TemperatureBlock(3, 0, 2));
+        field.addBlock(0, 0, "3");
+        field.addBlock(0, 1, "s");
+        field.addBlock(0, 2, "3");
         field.addBlock(1, 0, new TemperatureBlock(-2, 1, 0));
         field.addBlock(1, 1, new TemperatureBlock(-5, 1, 1));
         field.addBlock(1, 2, new TemperatureBlock(-3, 1, 2));
@@ -78,7 +78,7 @@ public class MenuController {
         field.addBlock(0, 1, new TemperatureBlock(2, 0, 1));
         field.addBlock(0, 2, new TemperatureBlock(-4,0,2));
         field.addBlock(0, 3, new TemperatureBlock(1, 0, 3));
-        field.addBlock(1, 1, new MultiplyBlock(2, 1, 1));
+        field.addBlock(1, 1, "*2");
         field.addBlock(1, 3, new TemperatureBlock(-9, 1, 3));
         field.addBlock(2, 2, new MultiplyBlock(2, 2, 2));
         field.addBlock(2, 3, new TemperatureBlock(2, 2, 3));

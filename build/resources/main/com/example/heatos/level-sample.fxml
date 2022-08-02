@@ -10,7 +10,7 @@
         <AnchorPane prefHeight="600.0" prefWidth="600.0">
             <Label fx:id="endGameLabel" text="Вы выиграли!" prefWidth="600" prefHeight="100"
                    AnchorPane.bottomAnchor="250" visible="false"/>
-            <GridPane fx:id="gridPane" styleClass="GridPane" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="100" >
+            <GridPane fx:id="gridPane" styleClass="GridPane" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="100">
                 <columnConstraints>
                     <ColumnConstraints halignment="CENTER" />
                     <ColumnConstraints halignment="CENTER" />
@@ -23,9 +23,9 @@
                 </rowConstraints>
             </GridPane>
             <AnchorPane prefHeight="60.0" prefWidth="600.0" AnchorPane.topAnchor="70.0">
-                <Label fx:id="levelName" text="Уровень 1" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" />
-                <Button prefHeight="60.0" prefWidth="60.0" text="⟲" AnchorPane.rightAnchor="120.0" />
-                <Button onAction="#showMenu" prefHeight="60.0" prefWidth="60.0" text="←" AnchorPane.leftAnchor="120.0" />
+                <Label fx:id="levelName" text="Уровень 1" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0"/>
+                <Button onAction="#restart" prefHeight="60.0" prefWidth="60.0" text="⟲" AnchorPane.rightAnchor="120.0"/>
+                <Button onAction="#showMenu" prefHeight="60.0" prefWidth="60.0" text="←" AnchorPane.leftAnchor="120.0"/>
             </AnchorPane>
         </AnchorPane>
 

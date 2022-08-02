@@ -43,6 +43,19 @@ public class Field {
     public void addBlock(int x, int y, Block block) {
         matrix[y][x] = block;
     }
+    public void addBlock(int x, int y, String name) {
+        Block block;
+        if (name.startsWith("*")) {
+            int index = Integer.parseInt(name.substring(1));
+            block = new MultiplyBlock(index, x, y);
+        } else if (name.equals("s")) {
+            block = new StoneBlock(x, y);
+        } else {
+            int temperature = Integer.parseInt(name);
+            block = new TemperatureBlock(temperature, x, y);
+        }
+        matrix[y][x] = block;
+    }
 
     public Block getBlock(int x, int y) {
         return matrix[y][x];
