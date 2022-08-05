@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0" styleClass="container" stylesheets="@mainStyles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.heatos.controller.RulesController">
+   <Group>
+      <Label layoutX="193.0" layoutY="-42.0" text="Правила" />
+      <Separator layoutY="40.0" prefWidth="540.0" />
+      <Button fx:id="backButton" layoutX="21.0" layoutY="-42.0" onAction="#showHello" styleClass="backButton" text="←" />
+   </Group>
+   <VBox alignment="CENTER" styleClass="rules">
+      <Text fill="WHITE" text="Базовые правила таковы:" underline="true" wrappingWidth="500.0">
+         <font>
+            <Font name="Lucida Sans Unicode" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" text="- Два блока можно объединить, чтобы сложить их температуры" wrappingWidth="500.0">
+         <font>
+            <Font name="Lucida Sans Unicode" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" text="- Однако, нельзя объединять два холодных блока" wrappingWidth="500.0">
+         <font>
+            <Font name="Lucida Sans Unicode" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" text="- Блок можно переместить на пустую клетку, но тогда его температура уменьшится на 1" wrappingWidth="500.0">
+         <font>
+            <Font name="Lucida Sans Unicode" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" text="В игре существуют не только температурные блоки:" wrappingWidth="500.0">
+         <font>
+            <Font name="Lucida Sans Unicode" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" text="Камень" underline="true" wrappingWidth="500.0">
+         <font>
+            <Font name="Lucida Sans Unicode" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" text="Блок серого цвета. Нельзя двигать блоки на него или перемещать сам блок." wrappingWidth="500.0">
+         <font>
+            <Font name="Lucida Sans Unicode" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" text="Множитель" underline="true" wrappingWidth="500.0">
+         <font>
+            <Font name="Lucida Sans Unicode" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" text="Белый блок. Его также нельзя двигать, но при объединении с другим блоком он умножает его температуру на указанное число." wrappingWidth="500.0">
+         <font>
+            <Font name="Lucida Sans Unicode" size="18.0" />
+         </font></Text>
+      <padding>
+         <Insets top="20.0" />
+      </padding>
+   </VBox>
+
+</VBox>

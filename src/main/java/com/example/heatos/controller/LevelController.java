@@ -110,14 +110,14 @@ public class LevelController {
                     int rectX = GridPane.getColumnIndex(rectangle);
                     int rectY = GridPane.getRowIndex(rectangle);
                     if (field.getBlock(rectX, rectY) instanceof TemperatureBlock) {
-                        if (!selectedExists && ((TemperatureBlock) block).temperature != 0) {
+                        if (!selectedExists && ((TemperatureBlock) field.getBlock(rectX, rectY)).temperature != 0) {
                             DropShadow shadow = new DropShadow();
                             shadow.setSpread(0.3);
                             shadow.setColor(new Color(0.1804, 0.0471, 0.2118, 1.0));
                             rectangle.setEffect(shadow);
                             field.setSelectedBlock((TemperatureBlock) field.getBlock(rectX, rectY));
                             selectedExists = true;
-                        } else {
+                        } else if (selectedExists) {
                             field.move(rectX, rectY);
                             if (field.winCheck()){
                                 endGame();

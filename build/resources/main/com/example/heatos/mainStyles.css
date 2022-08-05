@@ -101,3 +101,12 @@
     -fx-text-fill: white;
     -fx-alignment: center;
 }
+
+.rules {
+    -fx-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    -fx-font-size: 16px;
+    -fx-wrap-text: true;
+    -fx-fill: white;
+    -fx-text-fill: white;
+}
+

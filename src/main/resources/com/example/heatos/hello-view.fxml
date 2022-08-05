@@ -12,6 +12,6 @@
       <Separator layoutX="77.0" layoutY="249.0" prefHeight="7.0" prefWidth="455.0" />
       <Button fx:id="playButton" layoutX="226.0" layoutY="274.0" onAction="#showMenu" prefHeight="47.0"
               prefWidth="148.0" text="Играть"/>
-      <Button layoutX="226.0" layoutY="343.0" prefHeight="47.0" prefWidth="148.0" text="Правила" />
+      <Button layoutX="226.0" layoutY="343.0" onAction="#showRules" prefHeight="47.0" prefWidth="148.0" text="Правила" />
    </Group>
 </VBox>

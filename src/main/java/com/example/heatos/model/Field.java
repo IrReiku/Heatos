@@ -40,9 +40,6 @@ public class Field {
         this.selectedBlock = block;
     }
 
-    public void addBlock(int x, int y, Block block) {
-        matrix[y][x] = block;
-    }
     public void addBlock(int x, int y, String name) {
         Block block;
         if (name.startsWith("*")) {

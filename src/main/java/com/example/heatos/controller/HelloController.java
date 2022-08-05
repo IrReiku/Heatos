@@ -19,4 +19,11 @@ public class HelloController {
         Scene scene = new Scene(fxmlLoader.load(), 600, 600);
         stage.setScene(scene);
     }
+
+    public void showRules() throws IOException {
+        Stage stage = (Stage) playButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Heatos.class.getResource("rules-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
+        stage.setScene(scene);
+    }
 }
