@@ -37,15 +37,18 @@
          <font>
             <Font name="Lucida Sans Unicode" size="18.0" />
          </font></Text>
-      <Text fill="WHITE" text="Блок серого цвета. Нельзя двигать блоки на него или перемещать сам блок." wrappingWidth="500.0">
+      <Text fill="WHITE" text="Блок серого цвета. Нельзя двигать блоки на него или перемещать сам блок."
+            wrappingWidth="500.0">
          <font>
-            <Font name="Lucida Sans Unicode" size="18.0" />
+            <Font name="Lucida Sans Unicode" size="18.0"/>
          </font></Text>
       <Text fill="WHITE" text="Множитель" underline="true" wrappingWidth="500.0">
          <font>
-            <Font name="Lucida Sans Unicode" size="18.0" />
+            <Font name="Lucida Sans Unicode" size="18.0"/>
          </font></Text>
-      <Text fill="WHITE" text="Белый блок. Его также нельзя двигать, но при объединении с другим блоком он умножает его температуру на указанное число." wrappingWidth="500.0">
+      <Text fill="WHITE"
+            text="Белый блок. Его также нельзя двигать, но при объединении с другим блоком он умножает его температуру на указанное число."
+            wrappingWidth="500.0">
          <font>
             <Font name="Lucida Sans Unicode" size="18.0" />
          </font></Text>

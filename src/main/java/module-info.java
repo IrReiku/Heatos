@@ -1,6 +1,7 @@
 module com.example.heatos {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.junit.jupiter.api;
 
 
     opens com.example.heatos to javafx.fxml;

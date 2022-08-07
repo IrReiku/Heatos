@@ -7,4 +7,7 @@ public abstract class Block {
         this.x = x;
         this.y = y;
     }
+
+
+
 }

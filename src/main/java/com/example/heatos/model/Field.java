@@ -93,4 +93,8 @@ public class Field {
         }
         return true;
     }
+
+    public TemperatureBlock getSelectedBlock() {
+        return selectedBlock;
+    }
 }
